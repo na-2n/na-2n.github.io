@@ -85,14 +85,12 @@ a .tooltip {
     padding: 10px;
     font-size: 15px;
     box-shadow: var(--shadow);
-    z-index: 1;
     visibility: hidden;
-    opacity: 0;
+    z-index: 1;
 }
 
 a:hover .tooltip {
     visibility: visible;
-    opacity: 1;
 }
 
 @media screen and (max-width: 600px) {
