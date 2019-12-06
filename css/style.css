@@ -1,0 +1,145 @@
+:root {
+    --pink: #f5a9b8; /* sorry if this is not pink, I'm colorblind and it looks pink to me */
+    --pink-translucent: rgba(245, 169, 184, 0.7);
+    --white: #ffffff;
+    --black: #000000;
+    --shadow: 5px 5px 10px hsla(329, 43%, 10%, 0.7);
+    --background: url('../img/background.png');
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--background) 0 / cover fixed;
+}
+
+.overlay {
+    display: flex;
+    flex-direction: row;
+    background: var(--pink-translucent);
+    min-height: 100%;
+}
+
+.floating-card {
+    position: relative;
+    width: 30rem;
+    padding: 40px;
+    margin: 40px;
+    box-shadow: var(--shadow);
+}
+
+.floating-card.light {
+    color: var(--black);
+    background: var(--white);
+}
+
+.floating-card.light a {
+    text-decoration: none;
+    color: #ef3358;
+}
+
+.floating-card.info {
+    margin-top: auto;
+}
+
+.overlay.center {
+    justify-content: center;
+}
+
+.floating-card.me {
+    align-self: center;
+}
+
+
+.floating-card .social-icons a,
+.floating-card .page-icons a {
+    text-decoration: none;
+    color: var(--pink);
+    margin-right: 20px;
+}
+
+.floating-card .social-icons a.right,
+.floating-card .page-icons {
+    float: right;
+}
+
+.floating-card .social-icons {
+    position: absolute;
+}
+
+a .tooltip {
+    position: absolute;
+    margin-top: -10px;
+    margin-left: 10px;
+    background: var(--pink);
+    color: var(--white);
+    padding: 10px;
+    font-size: 15px;
+    box-shadow: var(--shadow);
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+}
+
+a:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media screen and (max-width: 600px) {
+    .floating-card.info {
+        text-align: center;
+        margin-bottom: 50%;
+        margin-top: 50%;
+    }
+
+    .floating-card .social-icons {
+        position: relative;
+    }
+
+    .floating-card .social-icons a {
+        margin-right: 10px;
+    }
+
+    .floating-card .page-icons {
+        float: initial;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .floating-card .page-icons a {
+        padding: 10px 20px 10px 20px;
+        width: 10rem;
+        text-align: center;
+        margin: 10px 0 10px 0;
+        background: var(--pink);
+        color: var(--white);
+    }
+
+    .floating-card .page-icons a i {
+        float: left;
+    }
+
+    .floating-card .page-icons a .tooltip {
+        position: relative;
+        margin-top: 0;
+        margin-left: 0;
+        background: none;
+        color: inherit;
+        padding: 0;
+        font-size: inherit;
+        box-shadow: none;
+        visibility: visible;
+        z-index: 0;
+    }
+}
