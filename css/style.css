@@ -22,6 +22,14 @@ body {
     background: var(--background) 0 / cover fixed;
 }
 
+ul {
+    margin-bottom: 2em;
+}
+
+li {
+    margin: 0.5em 0;
+}
+
 .overlay {
     display: flex;
     flex-direction: row;
@@ -31,7 +39,7 @@ body {
 
 .floating-card {
     position: relative;
-    width: 30rem;
+    min-width: 30rem;
     padding: 40px;
     margin: 40px;
     box-shadow: var(--shadow);
