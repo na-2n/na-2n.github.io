@@ -3,8 +3,8 @@
     --pink-translucent: rgba(245, 169, 184, 0.7);
     --white: #ffffff;
     --black: #000000;
-    --shadow: 5px 5px 10px hsla(329, 43%, 10%, 0.7);
     --background: url('../img/background.png');
+    --shadow: -3px 6px 24px hsla(328.6, 41.2%, 10%, 0.4);
 }
 
 * {
@@ -20,6 +20,7 @@ html, body {
 
 body {
     background: var(--background) 0 / cover fixed;
+    font-size: 1.2em;
 }
 
 ul {
@@ -28,6 +29,10 @@ ul {
 
 li {
     margin: 0.5em 0;
+}
+
+.small-text {
+    font-size: 1rem;
 }
 
 .overlay {
@@ -39,9 +44,10 @@ li {
 
 .floating-card {
     position: relative;
-    min-width: 30rem;
-    padding: 40px;
-    margin: 40px;
+    min-width: 30%;
+    padding: 2.5rem 4rem;
+    margin: 4rem;
+    border-radius: 12px;
     box-shadow: var(--shadow);
 }
 
@@ -55,8 +61,12 @@ li {
     color: #ef3358;
 }
 
+.floating-card.light a:hover {
+    text-decoration: underline;
+}
+
 .floating-card.info {
-    margin-top: auto;
+    align-self: flex-end;
 }
 
 .overlay.center {
@@ -68,32 +78,62 @@ li {
 }
 
 
-.floating-card .social-icons a,
-.floating-card .page-icons a {
+.links a {
     text-decoration: none;
     color: var(--pink);
-    margin-right: 20px;
+
+    width: 1em;
+    height: 1em;
+    display: block;
 }
 
-.floating-card .social-icons a.right,
-.floating-card .page-icons {
-    float: right;
+.links a:not(:last-child) {
+    margin-right: 1em;
 }
 
-.floating-card .social-icons {
-    position: absolute;
+.links {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.5em;
+}
+
+.links i {
+    height: 1em;
+    width: 1em;
+    text-align: center;
+}
+
+.links .social-icons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    flex: 1;
+    margin-right: 0.25rem;
 }
 
 a .tooltip {
     position: absolute;
-    margin-top: -10px;
-    margin-left: 10px;
-    background: var(--pink);
-    color: var(--white);
-    padding: 10px;
-    font-size: 15px;
-    box-shadow: var(--shadow);
+    font-size: 1rem;
+    line-height: 1em;
+    margin-left: 1em;
+    padding: 0.5em 0.75em;
+    font-weight: 900;
     visibility: hidden;
+    border-radius: 3px;
+    z-index: 1;
+    background: var(--black);
+    color: var(--white);
+}
+
+a .tooltip::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    margin-top: -0.75em;
+    left: -1em;
+    border: solid 0.75em transparent;
+    border-right-color: var(--black);
     z-index: 1;
 }
 
@@ -101,51 +141,12 @@ a:hover .tooltip {
     visibility: visible;
 }
 
+a .tooltip:hover {
+    visibility: hidden;
+}
+
 @media screen and (max-width: 600px) {
-    .floating-card.info {
-        text-align: center;
-        margin-bottom: 50%;
-        margin-top: 50%;
-    }
-
-    .floating-card .social-icons {
-        position: relative;
-    }
-
-    .floating-card .social-icons a {
-        margin-right: 10px;
-    }
-
-    .floating-card .page-icons {
-        float: initial;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .floating-card .page-icons a {
-        padding: 10px 20px 10px 20px;
-        width: 10rem;
-        text-align: center;
-        margin: 10px 0 10px 0;
-        background: var(--pink);
-        color: var(--white);
-    }
-
-    .floating-card .page-icons a i {
-        float: left;
-    }
-
-    .floating-card .page-icons a .tooltip {
-        position: relative;
-        margin-top: 0;
-        margin-left: 0;
-        background: none;
-        color: inherit;
-        padding: 0;
-        font-size: inherit;
-        box-shadow: none;
-        visibility: visible;
-        z-index: 0;
+    .floating-card {
+        width: 100%;
     }
 }
