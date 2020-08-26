@@ -20,7 +20,6 @@ html, body {
 
 body {
     background: var(--background) 0 / cover fixed;
-    font-size: 1.2em;
 }
 
 ul {
@@ -77,7 +76,6 @@ li {
     align-self: center;
 }
 
-
 .links a {
     text-decoration: none;
     color: var(--pink);
@@ -85,10 +83,13 @@ li {
     width: 1em;
     height: 1em;
     display: block;
+
+    margin: 0.5em;
 }
 
-.links a:not(:last-child) {
-    margin-right: 1em;
+
+.links a:first-child {
+    margin-left: 0;
 }
 
 .links {
@@ -148,5 +149,23 @@ a .tooltip:hover {
 @media screen and (max-width: 600px) {
     .floating-card {
         width: 100%;
+        align-self: center !important;
+    }
+
+    .links {
+        flex-direction: column;
+    }
+
+    .links a:first-child {
+        margin-left: 0.5em;
+    }
+
+    .links .social-icons {
+        margin-right: 0 !important;
+    }
+
+    .links > * {
+        display: flex;
+        justify-content: center;
     }
 }
