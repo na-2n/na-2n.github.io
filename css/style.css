@@ -150,6 +150,8 @@ a .tooltip:hover {
     .floating-card {
         width: 100%;
         align-self: center !important;
+        padding: 2rem 3rem;
+        margin: 1rem;
     }
 
     .links {
