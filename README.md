@@ -1,4 +1,4 @@
 # yuwui.github.io
 
-owo
+source for my [website](https://yui.pet)
 
