@@ -43,7 +43,7 @@ li {
 
 .floating-card {
     position: relative;
-    min-width: 30%;
+    min-width: 25%;
     padding: 2.5rem 4rem;
     margin: 4rem;
     border-radius: 12px;
@@ -146,12 +146,16 @@ a .tooltip:hover {
     visibility: hidden;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1024px) {
     .floating-card {
-        width: 100%;
+        width: auto;
         align-self: center !important;
         padding: 2rem 3rem;
-        margin: 1rem;
+        margin: 0 auto;
+    }
+
+    .floating-card:not(.me) {
+        text-align: center;
     }
 
     .links {
