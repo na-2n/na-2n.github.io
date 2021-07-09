@@ -104,7 +104,7 @@ li {
     text-align: center;
 }
 
-.links .social-icons {
+.links .link-icons {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -162,7 +162,7 @@ a .tooltip:hover {
         margin-left: 0.5em;
     }
 
-    .links .social-icons {
+    .links .link-icons {
         margin-right: 0 !important;
     }
 
