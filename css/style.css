@@ -31,7 +31,7 @@ li {
 }
 
 .small-text {
-    font-size: 1rem;
+    font-size: 0.7m;
 }
 
 .overlay {
@@ -161,6 +161,19 @@ a .tooltip:hover {
 
 .back-btn img {
     height: 1em;
+}
+
+.at {
+    font-size: 0;
+}
+
+.at::before {
+    font-size: initial;
+    content: " [at] ";
+}
+
+.email:hover .at::before {
+    content: "@";
 }
 
 @media screen and (max-width: 1024px) {
