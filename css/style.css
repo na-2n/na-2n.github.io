@@ -30,11 +30,6 @@ html {
     cursor: url('../img/cursor/pointer.cur'), auto;
 }
 
-/* probably need to add more elements to this some time later */
-h1, h2, h3, h4, h5, h6, p, span, a, li {
-    cursor: url('../img/cursor/text.cur'), auto;
-}
-
 body {
     background: var(--background) right / cover fixed;
 }

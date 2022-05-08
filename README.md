@@ -2,5 +2,5 @@
 
 # yuwui.github.io
 
-source for my [website](https://yui.pet)
+source for my [website](https://yui.lol)
 
