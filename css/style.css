@@ -3,12 +3,16 @@
     --pink-translucent: rgba(245, 169, 184, 0.7);
     --white: #ffffff;
     --black: #000000;
-    --background: url('../img/background.png');
+    --background: url('../img/background2.png');
     --shadow: -3px 6px 24px hsla(328.6, 41.2%, 10%, 0.4);
 }
 
 * {
     font-family: 'Roboto', sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
 html, body {
@@ -18,8 +22,21 @@ html, body {
     padding: 0;
 }
 
+html {
+    cursor: url('../img/cursor/default.cur'), auto;
+}
+
+*:link {
+    cursor: url('../img/cursor/pointer.cur'), auto;
+}
+
+/* probably need to add more elements to this some time later */
+h1, h2, h3, h4, h5, h6, p, span, a, li {
+    cursor: url('../img/cursor/text.cur'), auto;
+}
+
 body {
-    background: var(--background) 0 / cover fixed;
+    background: var(--background) right / cover fixed;
 }
 
 ul {
@@ -28,6 +45,62 @@ ul {
 
 li {
     margin: 0.5em 0;
+}
+
+.nobreak {
+    white-space: nowrap;
+}
+
+@keyframes rainbow-text {
+    0% {
+        color: red;
+    }
+
+    12.5% {
+        color: orange;
+    }
+
+    25% {
+        color: yellow;
+    }
+
+    37.5% {
+        color: lime;
+    }
+
+    50% {
+        color: green;
+    }
+
+    62.5% {
+        color: cyan;
+    }
+    
+    75% {
+        color: blue;
+    }
+
+    87.5% {
+        color: violet;
+    }
+
+
+    100% {
+        color: red;
+    }
+}
+
+.rainbow {
+    font-family: "Comic Sans MS", sans-serif;
+    font-size: 1.2em;
+    animation: rainbow-text 5s infinite linear;
+}
+
+/* rainbows are cool but seizures aren't */
+@media (prefers-reduced-motion) {
+    .rainbow {
+        animation: none;
+    }
 }
 
 .small-text {
@@ -39,6 +112,45 @@ li {
     flex-direction: row;
     background: var(--pink-translucent);
     min-height: 100%;
+}
+
+.left-section {
+    display: flex;
+    flex-direction: row;
+    flex: 2;
+    overflow: hidden;
+}
+
+.right-section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.floating-buttons {
+    position: relative;
+    margin: 4rem;
+    align-self: flex-end;
+    width: 100%;
+    text-align: right;
+}
+
+.banner-button {
+    text-decoration: none;
+}
+
+.banner-button img {
+    border: 2px solid transparent;
+    image-rendering: pixelated;
+}
+
+
+.banner-button:hover img {
+    border-color: var(--pink);
+}
+
+.floating-buttons .banner-button:hover img {
+    border-color: var(--white);
 }
 
 .floating-card {
@@ -177,11 +289,23 @@ a .tooltip:hover {
 }
 
 @media screen and (max-width: 1024px) {
+    .overlay {
+        flex-direction: column;
+    }
+
     .floating-card {
         width: auto;
+        max-width: max-content;
         align-self: center !important;
         padding: 2rem 3rem;
-        margin: 0 auto;
+        margin: 4rem auto;
+    }
+
+    .floating-buttons {
+        margin-top: 0;
+        margin-bottom: 2em;
+        align-self: center !important;
+        text-align: center;
     }
 
     .floating-card:not(.me) {
