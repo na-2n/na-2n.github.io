@@ -26,9 +26,16 @@ html {
     cursor: url('../img/cursor/default.cur'), auto;
 }
 
+/*
+h1, h2, h3, h4, h5, h6, p, span, a, li {
+    cursor: text;
+}
+*/
+
 *:link {
     cursor: url('../img/cursor/pointer.cur'), auto;
 }
+
 
 body {
     background: var(--background) right / cover fixed;
