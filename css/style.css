@@ -1,10 +1,12 @@
 :root {
-    --primary: #FFB2B2;
+    --primary: #ffb2b2;
     --primary-translucent: rgba(255, 178, 178, 0.7);
+    --link: #ef3358;
     --white: #ffffff;
     --black: #000000;
     --background: url('../img/background2.png');
     --shadow: -3px 6px 24px hsla(328.6, 41.2%, 10%, 0.4);
+
 }
 
 * {
@@ -171,7 +173,7 @@ li {
 
 .floating-card.light a {
     text-decoration: none;
-    color: #ef3358;
+    color: var(--link);
 }
 
 .floating-card.light a:hover {
@@ -270,7 +272,7 @@ a .tooltip:hover {
 }
 
 .back-btn:hover {
-    border-color: var(--primary);
+    border-color: var(--link);
 }
 
 .back-btn img {
