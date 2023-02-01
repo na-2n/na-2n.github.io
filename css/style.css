@@ -1,6 +1,6 @@
 :root {
-    --pink: #f5a9b8;
-    --pink-translucent: rgba(245, 169, 184, 0.7);
+    --primary: #FFB2B2;
+    --primary-translucent: rgba(255, 178, 178, 0.7);
     --white: #ffffff;
     --black: #000000;
     --background: url('../img/background2.png');
@@ -112,7 +112,7 @@ li {
 .overlay {
     display: flex;
     flex-direction: row;
-    background: var(--pink-translucent);
+    background: var(--primary-translucent);
     min-height: 100%;
 }
 
@@ -148,7 +148,7 @@ li {
 
 
 .banner-button:hover img {
-    border-color: var(--pink);
+    border-color: var(--primary);
 }
 
 .floating-buttons .banner-button:hover img {
@@ -192,7 +192,7 @@ li {
 
 .links a {
     text-decoration: none;
-    color: var(--pink);
+    color: var(--primary);
 
     width: 1em;
     height: 1em;
@@ -270,7 +270,7 @@ a .tooltip:hover {
 }
 
 .back-btn:hover {
-    border-color: var(--pink);
+    border-color: var(--primary);
 }
 
 .back-btn img {
